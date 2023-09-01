@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import burger1 from "../../assets/burger1.png";
 import burger2 from "../../assets/burger2.png";
-// import burger3 here
+import burger3 from "../../assets/burger3.png";
 
 const CartItem = ({ value, title, img, increment, decrement }) => (
   <div className="cartItem">
@@ -28,24 +28,28 @@ const Cart = () => {
     <section className="cart">
       <main>
         <CartItem
-          title={"Cheese Burger"}
+          title={"Hamburguesa con queso"}
           img={burger1}
           value={0}
           increment={() => increment(1)}
-
-        // Add the function for decrementing the order by 1 
+          decrement={() => decrement(1)}
        
         />
-        <CartItem
-          title={"Veg Cheese Burger"}
+       <CartItem
+          title={"Hamburguesa vegetariana con queso"}
           img={burger2}
           value={0}
           increment={() => increment(2)}
-        // Add the function for decrementing the order by 2
-       
+          decrement={() => decrement(2)}
         />
 
-        {/* Fill up the code for Cheese Burger similarly */}
+<CartItem
+          title={"Hamburguesa con queso y patatas fritas"}
+          img={burger3}
+          value={0}
+          increment={() => increment(3)}
+          decrement={() => decrement(3)}
+        />   
        
 
         <article>
@@ -54,18 +58,18 @@ const Cart = () => {
             <p>₹{2000}</p>
           </div>
           <div>
-            <h4>Tax</h4>
+            <h4>IVA</h4>
             <p>₹{2000 * 0.18}</p>
           </div>
           <div>
-            <h4>Shipping Charges</h4>
+            <h4>Costes Envío</h4>
             <p>₹{200}</p>
           </div>{" "}
           <div>
             <h4>Total</h4>
             <p>₹{2000 + 2000 * 0.18 + 200}</p>
           </div>
-          <Link to="/shipping">Checkout</Link>
+          <Link to="/shipping">Confirmar pedido</Link>
         </article>
       </main>
     </section>

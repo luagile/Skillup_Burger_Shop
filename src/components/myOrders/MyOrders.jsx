@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
+
 import { AiOutlineEye } from "react-icons/ai";
 
 const MyOrders = () => {
@@ -11,18 +13,29 @@ const MyOrders = () => {
         <table>
           <thead>
             <tr>
-              <th>Order Id</th>
-              <th>Status</th>
-              <th>Item Qty</th>
-              <th>Amount</th>
-              <th>Payment Method</th>
-              <th>Action</th>
+              <th>Nº de Orden</th>
+              <th>Estado</th>
+              <th>Unidades</th>
+              <th>Importe</th>
+              <th>Método de pago</th>
+              <th>Acción</th>
             </tr>
           </thead>
-
           <tbody>
-//     Add the code for the table body
-           
+            {arr.map((i) => (
+              <tr key={i}>
+                <td>#10534</td>
+                <td>Procesando</td>
+                <td>23</td>
+                <td>₹{2132}</td>
+                <td>COD</td>
+                <td>
+                  <Link to={`/order/${"asdsds"}`}>
+                    <AiOutlineEye />
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </main>
